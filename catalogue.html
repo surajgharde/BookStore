@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalogue - BookHaven</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #263238;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .filter-group {
+            display: flex;
+            align-items: center;
+        }
+        .filter-group label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .filter-group select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .book-cover {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .btn {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0d1257;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            color: #1a237e;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+        .pagination a.active {
+            background-color: #1a237e;
+            color: white;
+            border: 1px solid #1a237e;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        footer {
+            background-color: #263238;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BookHaven</h1>
+        <p>Your Gateway to Literary Adventures</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+    <div class="container">
+        <h2>Book Catalogue</h2>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre">
+                    <option value="all">All Genres</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="nonfiction">Non-Fiction</option>
+                    <option value="mystery">Mystery & Thriller</option>
+                    <option value="scifi">Science Fiction</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="romance">Romance</option>
+                    <option value="biography">Biography</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sort">Sort By:</label>
+                <select id="sort" name="sort">
+                    <option value="bestselling">Bestselling</option>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="title">Title: A-Z</option>
+                </select>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>The Silent Patient</td>
+                    <td>Alex Michaelides</td>
+                    <td>Mystery & Thriller</td>
+                    <td>2019</td>
+                    <td>$19.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Educated</td>
+                    <td>Tara Westover</td>
+                    <td>Biography</td>
+                    <td>2018</td>
+                    <td>$22.50</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Dune</td>
+                    <td>Frank Herbert</td>
+                    <td>Science Fiction</td>
+                    <td>1965</td>
+                    <td>$24.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Where the Crawdads Sing</td>
+                    <td>Delia Owens</td>
+                    <td>Fiction</td>
+                    <td>2018</td>
+                    <td>$18.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Atomic Habits</td>
+                    <td>James Clear</td>
+                    <td>Self-Help</td>
+                    <td>2018</td>
+                    <td>$21.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>The Alchemist</td>
+                    <td>Paulo Coelho</td>
+                    <td>Fiction</td>
+                    <td>1988</td>
+                    <td>$15.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Harry Potter and the Sorcerer's Stone</td>
+                    <td>J.K. Rowling</td>
+                    <td>Fantasy</td>
+                    <td>1997</td>
+                    <td>$17.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>Sapiens: A Brief History of Humankind</td>
+                    <td>Yuval Noah Harari</td>
+                    <td>Non-Fiction</td>
+                    <td>2011</td>
+                    <td>$23.50</td>
+                    <td>Low Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Fiction</td>
+                    <td>1925</td>
+                    <td>$12.99</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="/api/placeholder/80/120" alt="Book Cover" class="book-cover"></td>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>Fiction</td>
+                    <td>1960</td>
+                    <td>$14.50</td>
+                    <td>In Stock</td>
+                    <td><button class="btn">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 BookHaven. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </footer>
+</body>
+</html>
